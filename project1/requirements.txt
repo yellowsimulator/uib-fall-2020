@@ -1,0 +1,11 @@
+xlrd
+numpy
+pandas
+scipy
+sklearn
+matplotlib
+seaborn
+requests
+plotly
+flask
+waitress
