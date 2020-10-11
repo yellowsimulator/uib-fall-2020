@@ -1,0 +1,51 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX spellcheck = en-US
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+% !TeX spellcheck = en_US
+%\documentclass[a4paper,14pt]{report}
+\documentclass[14pt,a4paper,twoside]{extarticle}
+\fontsize{14.4}{17.3}\selectfont
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{float}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------
+%opening
+\title{Project 1 part 2 report}
+\author{Yapi Donatien Achou}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The objective of this part of the project, was to clean the data. The original data came as three separate files. A json file containing users data, an excel file containing the films information such as title and genre, and a dat file containing information about the users ranking. 
+
+\section{Data cleaning process}
+The users data contained in the json file was uploaded into a pandas data frame by using the read json pandas function. After inspecting the types of each columns, the entries containing None and NaN were removed. The resulting data frame was saved as a csv file.
+\justify  
+The dat file containing the ranking information was loaded into a pandas data frame, inspected and missing values represented by None or NaN were removed. The data frame was subsequently saved as a csv file.
+\justify 
+The Excel file was loaded into a pandas data frame. The genre were added as columns, to form a new data frame, which was saved as a csv file.
+\justify
+The data cleaning process was implemented in three separate functions, each dealing with each file (json, dat and excel). A wrapper function was implemented to save the csv files into an output folder, which is one of the arguments of the wrapper function, the second being the name of the folder containing the raw data.
+
+\section{Conclusion}
+In the final stage of the project, the three csv files (users, rankings and films), will be merged into a single file, which will represent the final data for constructing the final model for the movie recommendation system.
+\end{document}
